@@ -1,7 +1,9 @@
 # RoundProgressBar
-  JavaScript lib. for round progress bar in HTML\
+  JavaScript lib. for round progress bar in HTML
 ## How to use
-  include the roundProgress.js from scripts\
-  call roundProgInit(containerId, backgroundColor, accentColor) to make the progress bar\
-  update the percentage with roundProgUpdate(containerId, percentage)
-## enjoy!
+  
+1.  include the roundProgress.js from scripts 
+2.  create a div with id 
+3.  call roundProgInit(containerId, backgroundColor, accentColor) to make the progress bar
+4.  update the percentage with roundProgUpdate(containerId, percentage)
+## Enjoy!
