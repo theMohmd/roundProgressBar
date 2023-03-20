@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI</title>
+
+    <link rel="stylesheet" href="styles/output.css" />
+    <link rel="stylesheet" href="styles/olicons.css" />
+  </head>
+  <body>
+    <div
+      class="
+      h-full w-full p-4 
+      grid grid-cols-1 grid-rows-[10fr_25fr_30fr_20fr] justify-items-center 
+      bg-[hsl(265,74%,20%)]
+      "
+    >
+      <div
+        style="
+          border-radius: 100%;
+          height: 300px;
+          width: 300px;
+          background-color: hsl(265, 74%, 20%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            width: 150px;
+            box-shadow: inset -25px -25px 25px hsl(265, 74%, 20%),
+              25px 25px 25px hsl(265, 74%, 15%),
+              -25px -25px 25px hsl(265, 74%, 25%);
+            background-color: hsl(265, 74%, 12%);
+            border-radius: 100%;
+          "
+        >
+          <div
+            id="progCon"
+            style="
+              height: 130px;
+              width: 130px;
+              background-color: hsl(265, 74%, 12%);
+              border-radius: 100%;
+            "
+          ></div>
+        </div>
+      </div>
+
+      <div>
+        <input
+          id="input"
+          type="text"
+          oninput="func()"
+          placeholder="percentage"
+          style="
+            box-shadow: 5px 5px 5px hsl(265, 74%, 15%),
+              -5px -5px 5px hsl(265, 74%, 25%);
+          "
+          class="bg-dPurple text-orange text-center leading-8 w-[130px] focus:outline-none rounded-xl"
+        />
+      </div>
+    </div>
+
+    <script src="scripts/roundProgress.js"></script>
+    <script>
+      function func() {
+        if (isNaN(document.getElementById("input").value)) {
+          document.getElementById("input").style.color = "red";
+        } else {
+          document.getElementById("input").style.color = "hsl(30, 100%, 50%)";
+          if (Number(document.getElementById("input").value) > 100) {
+            document.getElementById("input").value %= 100;
+          } else if (Number(document.getElementById("input").value) < 0) {
+            document.getElementById("input").value *= -1;
+          }
+        }
+        roundProgUpdate(
+          "progCon",
+          Number(document.getElementById("input").value)
+        );
+      }
+      roundProgInit("progCon", "hsl(265, 74%, 12%)", "hsl(30, 100%, 50%)");
+      roundProgUpdate("progCon", 100);
+    </script>
+  </body>
+</html>
