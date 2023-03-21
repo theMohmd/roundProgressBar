@@ -7,3 +7,4 @@
 3.  call roundProgInit(containerId, backgroundColor, accentColor) to make the progress bar
 4.  update the percentage with roundProgUpdate(containerId, percentage)
 ## Enjoy!
+![screen shot!](/screenShot.png "screen shot")
